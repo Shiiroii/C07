@@ -6,7 +6,7 @@
 /*   By: liulm <liulm@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/25 13:59:07 by liulm             #+#    #+#             */
-/*   Updated: 2024/07/30 18:48:10 by liulm            ###   ########.fr       */
+/*   Updated: 2024/07/30 19:04:53 by liulm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,9 +50,9 @@ char	*ft_strdup(char *src)
 
 #include <stdio.h>
 
-int	main()
+int	main(void)
 {
-	char	str[10] = "Salut";
+	char	str[10] = "test test";
 
 	printf("%s", ft_strdup(str));
 	return (0);
