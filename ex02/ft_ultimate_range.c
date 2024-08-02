@@ -3,18 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_ultimate_range.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: liulm <liulm@student.42.fr>                +#+  +:+       +#+        */
+/*   By: lionelulm <lionelulm@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/02 11:50:37 by liulm             #+#    #+#             */
-/*   Updated: 2024/08/02 11:54:42 by liulm            ###   ########.fr       */
+/*   Updated: 2024/08/02 12:57:20 by lionelulm        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int	*ft_ultimate_range(int **range, int min, int max)
+int	ft_ultimate_range(int **range, int min, int max)
 {
 	int	i;
+	int	calc;
+	int	*res;
 
 	i = 0;
 	if (min >= max)
@@ -22,33 +24,37 @@ int	*ft_ultimate_range(int **range, int min, int max)
 		*range = NULL;
 		return (0);
 	}
-	*range = malloc((max - min) * sizeof(int));
-	if (!array)
-		return (-1);
-	while (i < max - min)
+	calc = max - min;
+	res = (int *)malloc(calc * sizeof(int));
+	if (!range)
 	{
-		*range[i] = min + i;
+		*range = NULL;
+		return (-1);
+	}
+	while (i < calc)
+	{
+		res[i] = min + i;
 		i++;
 	}
-	return (range);
+	*range = res;
+	return (calc);
 }
 
 // -----------------------------------------------
 
 #include <stdio.h>
 
-int	main(void)
+int main(void)
 {
-	int	*array;
+	int	*tab;
+	int	size;
 	int	i;
 
 	i = 0;
-	array = ft_ultimate_range(1, 10);
-	while (i < 10)
+	size = ft_ultimate_range(&tab, 1, 15);
+	while(i < size)
 	{
-		printf("%d\n", array[i]);
+		printf("%d, ", tab[i]);
 		i++;
 	}
-	free (array);
-	return (0);
 }

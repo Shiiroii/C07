@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_range.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: liulm <liulm@student.42.fr>                +#+  +:+       +#+        */
+/*   By: lionelulm <lionelulm@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 19:20:35 by liulm             #+#    #+#             */
-/*   Updated: 2024/08/02 11:47:58 by liulm            ###   ########.fr       */
+/*   Updated: 2024/08/02 13:00:32 by lionelulm        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,18 +37,22 @@ int	*ft_range(int min, int max)
 
 #include <stdio.h>
 
-int	main(void)
+int main(void)
 {
-	int	*array;
+	int	min;
+	int	max;
+	int	*tab;
+	int	size;
 	int	i;
 
 	i = 0;
-	array = ft_range(1, 10);
-	while (i < 10)
+	min = 1;
+	max = 15;
+	size = max - min;
+	tab = ft_range(min, max);
+	while(i < size)
 	{
-		printf("%d\n", array[i]);
+		printf("%d, ", tab[i]);
 		i++;
 	}
-	free (array);
-	return (0);
 }
