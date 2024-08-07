@@ -26,7 +26,7 @@ int	ft_ultimate_range(int **range, int min, int max)
 	}
 	calc = max - min;
 	res = (int *)malloc(calc * sizeof(int));
-	if (!range)
+	if (!res)
 	{
 		*range = NULL;
 		return (-1);
